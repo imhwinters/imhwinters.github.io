@@ -16,9 +16,41 @@ body {
 .Subtitle {
   margin-top: 0;
   color: gray;
+} 
+
+.Why, .What, .How {
+  margin-bottom: 0.2rem;
+  text-decoration: underline;
 }
 
-a {
+.WhyExplanation, .HowExplanation {
+  margin-top: 0;
+  padding-left: 2.5rem;
+  width: 75%;
+}
+
+.WhatExplanation {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+.TitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.TitleRow h2 {
+  margin: 0;
+}
+
+.ImageLink img {
+  height: 2em;
+  width: auto;
+  display: block;
+}
+
+a:not(.ImageLink) {
   color: #5877a3;
   text-decoration: none;
   position: relative;
@@ -26,7 +58,7 @@ a {
   transition: color 0.2s ease;
 }
 
-a::after {
+a:not(.ImageLink)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -39,12 +71,12 @@ a::after {
   transition: transform 0.35s ease;
 }
 
-a:hover::after {
+a:not(.ImageLink):hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-a:not(:hover)::after {
+a:not(:hover, .ImageLink)::after {
   transform: scaleX(0);
   transform-origin: right;
 }

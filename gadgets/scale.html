@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isaac Winters - Smart Scale</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="TitleRow">
+    <h2>Smart Bluetooth Baking Scale</h2>
+    <a class="ImageLink" href="https://github.com/imhwinters/SmartScale" target="_blank">
+      <img src="../images/github.svg" alt="GitHub Logo">
+    </a>
+  </div>
+  
+  <h3 class="Why">Why?</h3>
+  <h4 class="WhyExplanation">
+    &emsp; My mom loves to bake, and she spends a lot of time making sourdough and other precise recipes that require specific
+    weights of ingredients. I noticed that her recipe books were slowly getting covered in dough. She hates having to turn
+    the pages with messy hands, so I decided to digitize some of her recipes. Unfortunately, this didn't solve her issue;
+    she still needed to use a mouse or trackpad and a keyboard with messy hands. To fix this issue, I built a small scale
+    and coded an app which connected to the scale with bluetooth. I added a few recipes to the app, which automatically gives
+    her instructions and advances when she adds the correct weight of the needed ingredient.</h4>
+  
+  <h3 class="What">What?</h3>
+  <ul class="WhatExplanation">
+    <li class="WhatExplanation"><h4 class="WhatExplanation">XIAO Esp32c3 MCU</h4></li>
+    <li class="WhatExplanation"><h4 class="WhatExplanation">Load Cell (1-5kg)</h4></li>
+    <li class="WhatExplanation"><h4 class="WhatExplanation">Load Cell Amplifier</h4></li>
+  </ul>
+  
+  <h3 class="How">How?</h3>
+  <h4 class="HowExplanation">
+    &emsp; The load cell can detect force, but can't send it to the microcontroller in a format it will understand. For the
+    microcontroller to be able to find how much weight the load cell is bearing, we need the load cell amplifier to act as
+    a middleman. I connected the load cell to the load cell amplifier, and connected the amplifier to one of the analog GPIOs
+    on the MCU. From there, I ran a code on the MCU that detects how much weight (in grams) is placed on the load cell. Ten times
+    a second, it sends that weight via a bluetooth packet to whatever computer it's paired with. On my mom's computer, I ran
+    a Python program which detects the device's connection and accepts the bluetooth packets. The program has a recipe loaded via
+    a JSON file, and it goes through the recipe in steps, moving on when she adds the correct weight of that step's ingredient.
+  </h4>
+</body>
+</html>
