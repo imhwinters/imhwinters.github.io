@@ -45,9 +45,17 @@ body {
 }
 
 .ImageLink img {
-  height: 2em;
   width: auto;
   display: block;
+}
+
+.GithubLink {
+  height: 2em;
+}
+
+.HomeLink {
+  filter: invert(100%);
+  height: 1.7em;
 }
 
 a:not(.ImageLink) {
