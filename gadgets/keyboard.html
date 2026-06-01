@@ -42,6 +42,15 @@
   
   <h3 class="How">How?</h3>
   <h4 class="HowExplanation">
-    &emsp;  </h4>
+    &emsp; I thought that this would be a much easier project than it turned out to be. I've made projects with buttons before, and a
+    keyboard is just a bunch of buttons, right? Wrong! The microcontrollers I was using (one for each side of the keyboard) didn't have enough
+    i/o pins to communicate with every button. Instead, I needed to make a diode matrix: I wired the keys into a two-dimensional matrix of rows and columns,
+    and connected every row and column to a pin on the microcontroller. When an individual button is pressed, it fires to two pins, one
+    representing its row and one representing its column. Therefore, we can pinpoint which button is pressed even without every button being given an individual pin.<br>
+    &emsp; I needed to make custom PCBs for this project, because it would make the build process much more manageable and the final 
+    project would look much better on my desk. To make the circuitboards, I used the KiCad software, which is an open-source schematic
+    and PCB creation application. After they were done, I used a manufacturing service to have them cut and delivered to my house. Finally,
+    I used my friend's reflow oven (which automates surface-mount soldering) to put the build together.</h4>
+
 </body>
 </html>
